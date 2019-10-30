@@ -25,13 +25,13 @@ namespace web_api_simpsons.Controllers
             },
             new Character
             {
-                FirstName = "Bartolomeo",
-                SecondName = "Jay",
-                Description = "Hijo de Homero y Marge, y hermano mayor de Lisa y Maggie Simpsons."
+                FirstName = "",
+                SecondName = "",
+                Description = ""
             },
         };
 
-        //string connectionString = @"data source = LAPTOP-UCMOS94G\SQLEXPRESS; initial catalog = db_simpsons; user id = simpsons; password = 12345";
+        string connectionString = @"data source = LAPTOP-UCMOS94G\SQLEXPRESS; initial catalog = db_dragonball; user id = goku; password = 12345";
 
         
         [HttpGet("{id}")]
@@ -43,10 +43,10 @@ namespace web_api_simpsons.Controllers
         [HttpGet]
         public List<Character> GetCharacterList()
         {
-            /*List<Character> characters = new List<Character>();
+            List<Character> characters = new List<Character>();
 
             SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("select * from tbl_character", conn);
+            SqlCommand cmd = new SqlCommand("select * from tbl_character_db", conn);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while(reader.Read())
@@ -63,9 +63,9 @@ namespace web_api_simpsons.Controllers
             }
             conn.Close();
 
-            return characters;*/
+            return characters;
 
-            return characterList;
+            //return characterList;
         }
     }
 }
